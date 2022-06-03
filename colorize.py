@@ -31,6 +31,7 @@ def train(net, optimizer, loader, epochs=5, writer=None):
             loss.backward()
             optimizer.step()
             t.set_description(f'training loss: {mean(running_loss)}')
+            break
 
         if writer is not None:
             #Logging loss in tensorboard
